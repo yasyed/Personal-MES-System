@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Method Execution Pages for each step</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div th:object="${methodName}">
+<h1 th:text = "*{getName()}"> Method Name </h1>
+</div>
+
+
+<div>
+    <h2> Method Step Number </h2>
+    <p> Instructions</p>
+    <br>
+    <p> Image</p>
+    <br>
+    <p> Interactive Element (Timer, drop down, calendar, etc) --> Optional</p>
+
+    <table>
+    <tr>
+    <button> Sign Step </button>
+        <button> Pause and return later</button>
+    </tr>
+    </table>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        body {
+            background-color: lightblue;
+            display: flex;
+            flex-direction: column;
+
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+
+        header {
+            text-align: center;
+            margin-left: 50px;
+            margin-top: 90px;
+        }
+
+        main {
+            display: flex;
+            gap: 70px;
+            justify-content: center;
+            align-items: center;
+            width: 900px;
+            height: 500px;
+            border: 5px solid black;
+            border-radius:8px;
+            background-color: khaki;
+        }
+
+        .Boxtitle {
+            font-size: 40px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-decoration: none;
+        }
+
+        .button {
+            font-size: 40px;
+            padding: 20px;
+            border: 3px solid black;
+            text-align: center;
+            text-decoration: none;
+            background-color: lavender;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+<h1> Welcome to Yousuf's Manufacturing Execution System </h1>
+</header>
+
+<main>
+    <p class = "Boxtitle"> Please select to start: </p>
+
+    <nav class ="links">
+<a th:href="@{/executemethodlist}" class="button"> Execute Method </a>
+<br>
+        <br>
+<a th:href="@{/createnewmethod}" class="button"> Create New Method </a>
+<br>
+        <br>
+<a th:href="@{/editmethod}" class="button"> Edit Method </a>
+    </nav>
+</main>
+
+<button> Click here to Learn how to use</button>
+
+</body>
+</html>

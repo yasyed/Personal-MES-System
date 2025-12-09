@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Method Execution Step </title>
+
+    <style>
+
+        body {
+            background-color: lightblue;
+        }
+
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+<header>
+<div th:object="${methodName}">
+    <h1 th:text="*{name}"> Title of Method </h1>
+    <p> Step Number</p>
+</div>
+</header>
+
+
+<main th:object = "${currentStep}">
+    <p> Type </p>
+<p th:text = "*{instruction}"> Step Instruction </p>
+    <p> Image(s)</p>
+
+<div th:object = "${methodName}">
+    <a th:href = "@{/executemethod/{id}/{stepnumber} (id=*{methodID}, stepnumber=*{currentStepNumber()}) }"> <button> Next Step </button></a>
+</div>
+
+</main>
+
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Creation of Method</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: lightblue;
+        }
+
+        .namefield{
+            width:500px;
+            font-size: 20px;
+        }
+
+        .descriptionfield {
+            width: 500px;
+            height: 350px;
+        }
+
+        form {
+            border: 5px solid black;
+            padding: 100px;
+            width: 800px;
+
+            text-align:center;
+            border-radius:8px;
+            font-size: 20px;
+            background-color: blanchedalmond;
+        }
+
+        button {
+            padding: 10px;
+            border: 1px solid black;
+            background-color: ghostwhite;
+            font-size: 15px ;
+        }
+
+        a{
+            padding: 10px;
+            border: 1px solid black;
+            background-color: ghostwhite;
+            text-decoration: none;
+        }
+
+        .links {
+            display: flex;
+            margin-left: 250px;
+            gap: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<form th:method="post" th:action="@{/addmethod}" th:object="${method}">
+
+    <table>
+    <tr>
+    <td><label> Method Name: </label> </td>
+    <td> <textarea th:field = "*{name}" class="namefield"> </textarea> </td>
+    </tr>
+        <tr>
+    <td> <label> Description: </label> </td>
+            <td> <textarea th:field = "*{description}" class = "descriptionfield"> </textarea> </td>
+        </tr>
+
+    <tr>
+        <td colspan="2">
+            <div class="links">
+            <button type ="submit"> Create Method </button>
+         <a th:href ="@{/}"> Cancel </a>
+            </div>
+        </td>
+    </tr>
+    </table>
+
+</form>
+
+</body>
+
+<!--Add a tools needed to the method stepsvbzxde45
+
+/* Make a form with fields and then add all method primary data to form
+bind all fields to a method object. Submit form (click button that says "add steps")
+
+click a button after the form to navigate to "create steps" html page
+have each step be bound to methodSteps entity which maps to PK of the methods entity
+basically a String arraylist of steps
+submit form should add to methodSteps object which will be mapped to individual method
+
+
+
+Steps in order
+
+Getmapping method to createnewmethod page(include method object in parameter)
+on the createnewmethod html page, include action, type, and object (pass the same object as above in GetMapping method)
+    for action, do createnewmethod but make sure its for postmapping
+create postmapping method that adds new method to database upon form submission (clicking "add method steps")
+----
+
+Create getmapping method to addmethod page (again pass a methodsteps object (which is an array)
+on the addmethod html page, include action, type, object (same object as above)
+create postmapping method to add method steps to database
+
+Once you have saved a method and method steps to database, work on displaying the object information on the execute method
+page
+*/-->
+
+</html>

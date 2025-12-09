@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> view method steps</title>
+</head>
+<body>
+
+<h1 th:text = "${method.name}" > </h1>
+
+<table>
+  <tr th:each = "methodstep: ${listofmethodsteps}">
+    <td th:text = "${methodstep.instruction}"> </td>
+  </tr>
+</table>
+
+
+</tr>
+
+
+
+
+</body>
+</html>

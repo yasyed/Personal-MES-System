@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Methods</title>
+
+
+    <style>
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background-color: lightblue;
+
+        }
+        table {
+            display: flex;
+            border: 1px solid black;
+            padding: 50px;
+            background-color: khaki;
+        }
+
+        td {
+            padding:20px;
+            border: 2px solid black;
+        }
+
+
+        a {
+            padding: 5px;
+            border: 1px solid black;
+            background-color: lavender;
+            text-decoration: none;
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<h1> Edit Existing Methods</h1>
+
+<table>
+    <tr>
+        <th> Method Name </th>
+        <th> Description </th>
+        <th colspan="2"> Choose Action:</th>
+    </tr>
+
+<tr th:each= "method : ${listofmethods}" class="contentrow">
+    <td th:text = "${method.name}" > </td>
+    <td th:text = "${method.description}" > </td>
+    <td>
+        <a th:href = "@{/createmethodstep/{id} (id =${method.methodID}) }" >  Add Method Steps  </a>
+    </td>
+    <td>
+        <a th:href = "@{/viewmethodsteps/{id} (id = ${method.methodID}) }">  View Method Steps</a>
+    </td>
+</tr>
+</table>
+
+<a th:href = "@{/}"> Return home </a>
+
+</body>
+</html>
