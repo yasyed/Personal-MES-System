@@ -2,43 +2,41 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title> Final Method Step </title>
+    <title> Method Execution Step </title>
 
     <style>
-        .Instruction_Box{
-            border: 2px solid black;
-            padding: 20px;
-            width: 60%;
-            margin:50px auto;
-            text-align:center;
-            border-radius:8px;
+
+        body {
+            background-color: lightblue;
         }
+
+
+
     </style>
 
+
 </head>
+
 <body>
 
-<div class = "Instruction_Box">
-
+<header>
     <div th:object="${methodName}">
         <h1 th:text="*{name}"> Title of Method </h1>
-        <p> Step Number</p>
+        <p th:text = "'Step Number: ' + *{currentStepNumber+ 1}"> </p>
     </div>
+</header>
 
-<div th:object = "${currentStep}">
 
+<main th:object = "${currentStep}">
     <p> Type </p>
     <p th:text = "*{instruction}"> Step Instruction </p>
     <p> Image(s)</p>
 
-</div>
+    <div th:object = "${methodName}">
+        <a th:href = "@{/executemethod/{id}/{stepnumber} (id=*{methodID}, stepnumber=*{currentStepNumber +1}) }"> <button> Finish Method </button></a>
+    </div>
 
-
-<div th:object = "${methodName}">
-    <a th:href = "@{/}"> <button> Sign for Completion </button></a>
-</div>
-
-</div>
+</main>
 
 
 

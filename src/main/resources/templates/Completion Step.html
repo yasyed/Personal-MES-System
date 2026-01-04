@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title> Final Method Step </title>
+
+  <style>
+    .Instruction_Box{
+      border: 2px solid black;
+      padding: 20px;
+      width: 60%;
+      margin:50px auto;
+      text-align:center;
+      border-radius:8px;
+    }
+  </style>
+
+</head>
+<body>
+
+<div class = "Instruction_Box">
+
+  <div th:object="${methodName}">
+    <h1 th:text="*{name}"> Title of Method </h1>
+    <p> Step Number</p>
+  </div>
+
+  <div th:object = "${currentStep}">
+
+    <p th:text = "'Step Number: ' + ${methodName.currentStepNumber + 1}"> </p>
+    <p th:text = "*{instruction}"> Step Instruction </p>
+    <p> Image(s)</p>
+
+  </div>
+
+
+  <div th:object = "${methodName}">
+    <a th:href = "@{/}"> <button> Complete and return methods list</button></a>
+  </div>
+
+</div>
+
+
+
+</body>
+</html>

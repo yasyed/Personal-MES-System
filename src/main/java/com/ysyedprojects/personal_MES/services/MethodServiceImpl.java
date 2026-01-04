@@ -37,7 +37,7 @@ public class MethodServiceImpl implements MethodService {
 
     public void setStepCounter (Long methodId, int stepCounter) {
         Method method = methodRepository.findById(methodId).get();
-        method.setCurrentStepNumber(stepCounter + 1);
+        method.setCurrentStepNumber(stepCounter);
     }
 
     public MethodStep getMethodStep (Long methodId, int stepNumber) {
@@ -51,9 +51,9 @@ public class MethodServiceImpl implements MethodService {
         Method method = methodRepository.findById(methodId).get();
         List <MethodStep> methodSteps = method.getMethodSteps();
         if ((methodSteps.size() - stepNumber == 1)) {
-            return 0;
-        } else  {
             return 1;
+        } else  {
+            return 0;
         }
     }
 }

@@ -59,15 +59,11 @@ public class Method {
         return methodSteps;
     }
 
-    public int  currentStepNumber() {
+    public int  getCurrentStepNumber() {
         return currentStepNumber;
     }
     public void setCurrentStepNumber(int currentStepNumber) {
         this.currentStepNumber = currentStepNumber;
-    }
-
-    public int getCurrentStepNumber() {
-        return currentStepNumber;
     }
 
     public void addMethodStep (MethodStep methodStep) {

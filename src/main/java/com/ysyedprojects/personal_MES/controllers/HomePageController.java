@@ -50,15 +50,16 @@ public class HomePageController {
     public String executeMethod (@PathVariable("id") Long id,  @PathVariable("stepnumber") int stepnumber, Model model) {
         Method method = methodService.getMethod(id);
         model.addAttribute("methodName", method);
+        methodService.setStepCounter(id, stepnumber);
         MethodStep stepToExecute = methodService.getMethodStep(id,stepnumber);
         model.addAttribute("currentStep", stepToExecute);
         int stepCheck = methodService.stepCheck(id, stepnumber);
 
-        if (stepCheck == 0) {
+        if (stepCheck == 1) {
             return "finalmethodstep"; //this page I can turn into form and direct to postmapping method
         }
 
-        methodService.setStepCounter(id, stepnumber);
+         //step number is incremented for the display (array starts at 0, but step should start at 1
         return "methodexecutionstep";
     }
 

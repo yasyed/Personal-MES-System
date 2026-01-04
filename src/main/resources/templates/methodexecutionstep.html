@@ -22,7 +22,7 @@
 <header>
 <div th:object="${methodName}">
     <h1 th:text="*{name}"> Title of Method </h1>
-    <p> Step Number</p>
+    <p th:text = "'Step Number: ' + *{currentStepNumber+ 1}"> </p>
 </div>
 </header>
 
@@ -33,7 +33,7 @@
     <p> Image(s)</p>
 
 <div th:object = "${methodName}">
-    <a th:href = "@{/executemethod/{id}/{stepnumber} (id=*{methodID}, stepnumber=*{currentStepNumber()}) }"> <button> Next Step </button></a>
+    <a th:href = "@{/executemethod/{id}/{stepnumber} (id=*{methodID}, stepnumber=*{currentStepNumber +1}) }"> <button> Next Step </button></a>
 </div>
 
 </main>

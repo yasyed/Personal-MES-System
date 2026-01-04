@@ -17,7 +17,7 @@ public class MethodStep {
     private Long methodStepNumber;
 
     @ManyToOne
-    @JoinColumn (name = "Method_Id")
+    @JoinColumn (name = "Method_Id") // Will point to the method that it belongs to
     private Method method;
 
     @Column(name = "instruction")
