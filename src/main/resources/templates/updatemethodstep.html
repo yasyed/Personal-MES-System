@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title> add method step</title>
+
+  <style>
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: lightblue;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      width: 800px;
+      height: 600px;
+      align-items: center;
+      background-color: blanchedalmond;
+      border: 5px solid black;
+    }
+
+    h1{
+      position: relative;
+      right: 100px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap:60px;
+      width: 700px;
+    }
+
+    .methodname {
+      display: flex;
+      margin-left: 200px;
+      gap: 20px;
+    }
+
+    textarea {
+      display: block;
+      width: 500px;
+      height: 100px;
+    }
+
+    button {
+      width: 150px;
+      background-color: lightcyan;
+    }
+
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+      position: relative;
+      top: 60px;
+    }
+
+    a {
+      padding: 10px;
+      border: 1px solid black;
+      background-color: lightcyan;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<main>
+  <div th:object="${method}" class="methodname">
+    <h1> Current Method: </h1>
+    <h1 th:text = "${method.name}"> </h1>
+  </div>
+
+
+  <form th:method = "post" th:action = "@{/editmethod/stepupdated}" th:object="${methodStep}">
+    <input type ="hidden" th:field= "*{method}">
+    <input type ="hidden" th:field= "*{methodStepID}">
+
+    <section>
+      <label for="instruction"> Please write the Method Instruction  </label>
+      <textarea th:field = "*{instruction}" id="instruction"></textarea>
+    </section>
+
+    <section>
+      <p> Please select a local file if this step requires an image</p>
+      <button> Click to add file</button>
+    </section>
+
+    <section>
+      <label> Please select applicable tools if any:</label>
+      <div th:each="tool: ${toolslist}">
+        <input type="checkbox" th:value="${tool}" th:field="*{toolsList}">
+        <span th:text = "${tool}"> Example </span>
+      </div>
+    </section>
+
+    <nav>
+      <button type ="submit" > Save and Exit </button>
+    </nav>
+  </form>
+
+</main>
+</body>
+</html>

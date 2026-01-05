@@ -55,10 +55,10 @@
     <td th:text = "${method.name}" > </td>
     <td th:text = "${method.description}" > </td>
     <td>
-        <a th:href = "@{/createmethodstep/{id} (id =${method.methodID}) }" >  Add Method Steps  </a>
+        <a th:href = "@{/create/newmethodstep/{id} (id =${method.methodID}) }" >  Add Method Steps  </a>
     </td>
     <td>
-        <a th:href = "@{/viewmethodsteps/{id} (id = ${method.methodID}) }">  View Method Steps</a>
+        <a th:href = "@{/editmethod/editmethodsteps/{id} (id = ${method.methodID}) }">  Edit Method Steps</a>
     </td>
 </tr>
 </table>

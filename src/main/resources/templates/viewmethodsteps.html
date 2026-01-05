@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title> view method steps</title>
+    <title> edit method steps</title>
 </head>
 <body>
 
@@ -11,11 +11,13 @@
 <table>
   <tr th:each = "methodstep: ${listofmethodsteps}">
     <td th:text = "${methodstep.instruction}"> </td>
+      <td>
+          <a th:href = "@{/editmethod/updateMethodStep/{id} (id =${methodstep.methodStepID}) }" >  Update </a>
+      </td>
   </tr>
 </table>
-
-
 </tr>
+
 
 
 

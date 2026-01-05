@@ -20,27 +20,15 @@
 
 <div class = "Instruction_Box">
 
-  <div th:object="${methodName}">
-    <h1 th:text="*{name}"> Title of Method </h1>
+
+    <h1 th:text="'Method Complete' + ${methodName.name}"> Title of Method </h1>
     <p> Step Number</p>
-  </div>
-
-  <div th:object = "${currentStep}">
-
-    <p th:text = "'Step Number: ' + ${methodName.currentStepNumber + 1}"> </p>
-    <p th:text = "*{instruction}"> Step Instruction </p>
-    <p> Image(s)</p>
-
-  </div>
 
 
   <div th:object = "${methodName}">
-    <a th:href = "@{/}"> <button> Complete and return methods list</button></a>
+    <a th:href = "@{/}"> <button> Complete and return to Dashboard</button></a>
   </div>
 
 </div>
-
-
-
 </body>
 </html>

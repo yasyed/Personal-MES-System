@@ -51,6 +51,10 @@ public class MethodStep {
         return instruction;
     }
 
+    public void setMethodStepID(Long methodStepID) {
+        this.methodStepID = methodStepID;
+    }
+
     public Long getMethodStepID() {
         return methodStepID;
     }

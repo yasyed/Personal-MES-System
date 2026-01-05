@@ -12,6 +12,8 @@ public interface MethodStepsService {
 
     public List<MethodStep> getAllMethodSteps() ;
 
+    public MethodStep getMethodStep (Long id);
 
+    public void updateMethodStep (Long id, String instruction);
 }
 
