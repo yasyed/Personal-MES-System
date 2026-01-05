@@ -1,8 +1,7 @@
-package com.ysyedprojects.personal_MES.entities;
+package com.ysyedprojects.personalMES.entities;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity

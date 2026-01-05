@@ -1,6 +1,6 @@
-package com.ysyedprojects.personal_MES.repositories;
+package com.ysyedprojects.personalMES.repositories;
 
-import com.ysyedprojects.personal_MES.entities.MethodStep;
+import com.ysyedprojects.personalMES.entities.MethodStep;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

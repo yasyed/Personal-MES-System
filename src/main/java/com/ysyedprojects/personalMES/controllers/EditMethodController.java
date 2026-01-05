@@ -1,10 +1,9 @@
-package com.ysyedprojects.personal_MES.controllers;
+package com.ysyedprojects.personalMES.controllers;
 
-import com.ysyedprojects.personal_MES.entities.Method;
-import com.ysyedprojects.personal_MES.entities.MethodStep;
-import com.ysyedprojects.personal_MES.entities.Tools;
-import com.ysyedprojects.personal_MES.services.MethodService;
-import com.ysyedprojects.personal_MES.services.MethodStepsService;
+import com.ysyedprojects.personalMES.entities.Method;
+import com.ysyedprojects.personalMES.entities.MethodStep;
+import com.ysyedprojects.personalMES.services.MethodService;
+import com.ysyedprojects.personalMES.services.MethodStepsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

@@ -1,9 +1,8 @@
-package com.ysyedprojects.personal_MES.services;
+package com.ysyedprojects.personalMES.services;
 
-import com.ysyedprojects.personal_MES.entities.Method;
-import com.ysyedprojects.personal_MES.entities.MethodStep;
-import com.ysyedprojects.personal_MES.repositories.MethodRepository;
-import jakarta.persistence.EntityNotFoundException;
+import com.ysyedprojects.personalMES.entities.Method;
+import com.ysyedprojects.personalMES.entities.MethodStep;
+import com.ysyedprojects.personalMES.repositories.MethodRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

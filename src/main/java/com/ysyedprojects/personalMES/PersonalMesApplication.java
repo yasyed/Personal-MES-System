@@ -1,4 +1,4 @@
-package com.ysyedprojects.personal_MES;
+package com.ysyedprojects.personalMES;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

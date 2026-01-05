@@ -1,4 +1,4 @@
-package com.ysyedprojects.personal_MES.entities;
+package com.ysyedprojects.personalMES.entities;
 
 public enum Tools {
     Timer,

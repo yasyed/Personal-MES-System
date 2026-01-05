@@ -1,4 +1,4 @@
-package com.ysyedprojects.personal_MES;
+package com.ysyedprojects.personalMES;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

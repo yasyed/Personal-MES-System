@@ -1,8 +1,7 @@
-package com.ysyedprojects.personal_MES.services;
+package com.ysyedprojects.personalMES.services;
 
-import com.ysyedprojects.personal_MES.entities.Method;
-import com.ysyedprojects.personal_MES.entities.MethodStep;
-import com.ysyedprojects.personal_MES.repositories.MethodStepRepository;
+import com.ysyedprojects.personalMES.entities.MethodStep;
+import com.ysyedprojects.personalMES.repositories.MethodStepRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 

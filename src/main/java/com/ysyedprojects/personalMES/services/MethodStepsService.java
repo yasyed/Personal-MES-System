@@ -1,7 +1,6 @@
-package com.ysyedprojects.personal_MES.services;
+package com.ysyedprojects.personalMES.services;
 
-import com.ysyedprojects.personal_MES.entities.MethodStep;
-import com.ysyedprojects.personal_MES.repositories.MethodStepRepository;
+import com.ysyedprojects.personalMES.entities.MethodStep;
 
 import java.util.List;
 
