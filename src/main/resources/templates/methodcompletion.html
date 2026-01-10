@@ -5,30 +5,60 @@
   <title> Final Method Step </title>
 
   <style>
-    .Instruction_Box{
-      border: 2px solid black;
-      padding: 20px;
-      width: 60%;
-      margin:50px auto;
-      text-align:center;
-      border-radius:8px;
-    }
+      body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+          justify-content: center;
+          align-items: center;
+          background-color: lightblue;
+      }
+
+      .boxcontent {
+          display: flex;
+          flex-direction: column;
+          gap: 50px;
+          color: black;
+          background-color: khaki;
+          padding: 40px;
+          align-items: center;
+          width: 40vw;
+          border: 2px solid black;
+      }
+
+      header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+
+      a {
+          border: 1px solid black;
+          text-align: center;
+
+          padding: 5px;
+          background-color: lavender;
+          text-decoration: none;
+          color: black;
+      }
+
+
   </style>
 
 </head>
+
 <body>
+<div class="boxcontent">
+    <header>
+        <h1> Congratulations, you have completed: </h1>
+        <h1 class = "method" th:text="${methodName.name}"> Title of Method </h1>
+    </header>
 
-<div class = "Instruction_Box">
-
-
-    <h1 th:text="'Method Complete' + ${methodName.name}"> Title of Method </h1>
-    <p> Step Number</p>
-
-
-  <div th:object = "${methodName}">
-    <a th:href = "@{/}"> <button> Complete and return to Dashboard</button></a>
-  </div>
+    <nav>
+        <a th:href = "@{/}">  Return to Home Dashboard </a>
+    </nav>
 
 </div>
+
 </body>
 </html>

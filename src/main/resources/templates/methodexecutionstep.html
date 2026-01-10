@@ -7,10 +7,56 @@
     <style>
 
         body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
             background-color: lightblue;
         }
 
+        .boxcontent {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            color: black;
+            background-color: khaki;
+            padding: 40px;
+            align-items: center;
+            width: 40vw;
+            border: 2px solid black;
+        }
 
+        header {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border: 1px solid black;
+            background-color: lightcyan;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        a {
+            border: 1px solid black;
+            text-align: center;
+
+            padding: 5px;
+            background-color: lavender;
+            text-decoration: none;
+            color: black;
+        }
 
     </style>
 
@@ -19,26 +65,21 @@
 
 <body>
 
-<header>
-<div th:object="${methodName}">
-    <h1 th:text="*{name}"> Title of Method </h1>
-    <p th:text = "'Step Number: ' + *{currentStepNumber+ 1}"> </p>
+<div class = "boxcontent">
+    <header>
+    <h1 th:text="${methodName.name}"> Title of Method </h1>
+    <p th:text = "'Step Number: ' + ${methodName.currentStepNumber+ 1}"> Step Number </p>
+    </header>
+
+    <main>
+    <p th:text = "${currentStep.instruction}"> Step Instruction </p>
+    </main>
+
+    <nav>
+        <a th:href = "@{/executemethod/{id}/{stepnumber} (id=${methodName.methodID}, stepnumber=${methodName.currentStepNumber +1}) }">  Next Step </a>
+        <a th:href = "@{/executemethod}"> Return to Method List </a>
+    </nav>
 </div>
-</header>
-
-
-<main th:object = "${currentStep}">
-    <p> Type </p>
-<p th:text = "*{instruction}"> Step Instruction </p>
-    <p> Image(s)</p>
-
-<div th:object = "${methodName}">
-    <a th:href = "@{/executemethod/{id}/{stepnumber} (id=*{methodID}, stepnumber=*{currentStepNumber +1}) }"> <button> Next Step </button></a>
-</div>
-
-</main>
-
-
 
 </body>
 </html>
